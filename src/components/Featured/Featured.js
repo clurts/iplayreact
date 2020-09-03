@@ -8,12 +8,13 @@ export default function Featured({ mytoken }) {
     const url = "https://api.spotify.com/v1/browse/featured-playlists";
 
     const [playlists, setPlaylists] = useState([])
-    const { data } = useSpotifyApi(url, mytoken)
+    const { data, error, loading } = useSpotifyApi(url, mytoken)
 
     console.log(data)
     //if (error) console.log(error);
 
     //setPlaylists(data.playlists.items)
+    //console.log(playlists)
     return (<p>test</p>)
 
     /*return (

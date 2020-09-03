@@ -1,6 +1,6 @@
 export function createToken() {
-    const clientId = "aa93d4dc547f426c888a2e2a2151af9e";
-    const ClientSecret = "447bb8233e9f4f9493bcca636ad31f39";
+    const clientId = process.env.CLIENT_ID;
+    const ClientSecret = process.env.CLIENT_SECRET;
 
     return fetch("https://accounts.spotify.com/api/token", {
         method: "POST",

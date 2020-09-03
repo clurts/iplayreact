@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react"
 
 const useFetch = (url, options) => {
-    const [response, setResponse] = React.useState(null);
-    const [error, setError] = React.useState(null);
-    React.useEffect(() => {
+    
+    const [response, setResponse] = useState(null);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
         const fetchData = async () => {
             try {
                 const res = await fetch(url, options);

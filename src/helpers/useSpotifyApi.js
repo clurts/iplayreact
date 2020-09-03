@@ -4,14 +4,17 @@ export function useSpotifyApi(url, mytoken) {
 
     const [data, setData] = useState(null);
     const [error, setError] = useState(null)
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         const fetchToJSON = async () => {
+            setLoading(true)
             try {
                 const res = await fetch(url, {
                     headers: { "Authorization": mytoken }
                 })
                 const data = await res.json()
+                setLoading(false)
                 setData(data)
 
             } catch (error) {
@@ -20,6 +23,6 @@ export function useSpotifyApi(url, mytoken) {
         };
         fetchToJSON()
     }, [])
-    return { data, error }
+    return { data, error, loading }
 
 }
