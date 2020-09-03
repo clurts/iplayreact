@@ -1,0 +1,14 @@
+.featured {
+    &__list {
+        list-style: none;
+        padding:0
+    }
+    &__listItem {
+        margin: 1em 0;
+    }
+    &__image {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
